@@ -3,7 +3,7 @@ import pandas as pd
 
 # Sample text extraction from dataframe
 # import dataframe from csv
-federal_spending_2021_titles_df = pd.read_csv('federal_spending_2021_titles.csv')
+presentation_df = pd.read_csv('presentation.csv')
 
 # Start Streamlit App
 st.set_page_config(layout="wide")
@@ -77,10 +77,10 @@ elif (plot_choice == "DIVISION M--Coronavirus Response and Relief Supplemental A
     row_index = 18
 
 # Retrieve summary and full text from dataframe
-summary_column = 'Content'
-full_text_column = 'Division'
-summary = federal_spending_2021_titles_df.at[row_index, summary_column]
-full_text = federal_spending_2021_titles_df.at[row_index, full_text_column]
+summary_column = 'summary'
+full_text_column = 'Content'
+summary = presentation_df.at[row_index, summary_column]
+full_text = presentation_df.at[row_index, full_text_column]
 
 # Create two columns
 col1, col2 = st.columns(2)
